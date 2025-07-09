@@ -1,0 +1,23 @@
+<header class="header" id="inicioIndex">
+  <div class="header-content">
+    <div class="navbar">
+      <!-- Hamburger menu button -->
+      <button class="hamburger-btn" (click)="toggleMenu()">
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+      </button>
+
+      <!-- Mobile menu items -->
+      <div class="mobile-menu" [class.active]="isMobileMenuOpen">
+        <a class="nav-link" (click)="goToInicio()">Inicio</a>
+        <a class="nav-link" (click)="goToPropiedades()">Propiedades</a>
+      </div>
+    </div>
+    <div class="logo-container">
+      <a (click)="goToInicioDirectly()">
+        <img src="../../../assets/logo.png" alt="Logo" />
+      </a>
+    </div>
+  </div>
+</header>

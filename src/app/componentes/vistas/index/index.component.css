@@ -1,0 +1,287 @@
+.hero-image {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+.city-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: zoomEffect 10s ease infinite alternate;
+  position: relative;
+  z-index: 0;
+}
+
+@keyframes zoomEffect {
+  0% {
+    transform: scale(1.1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+.text-overlay {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  z-index: 2;
+  width: auto;
+}
+
+.banner-text {
+  font-size: 30px;
+  font-weight: 400;
+  color: #c21525;
+  margin-top: 16px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.background {
+  background: linear-gradient(to right, #81CBA7, #474747);
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 400px;
+}
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+  height: 400px;
+}
+
+.card-img {
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card-img:hover {
+  transform: scale(1.05);
+}
+
+.card-body {
+  padding: 20px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  margin-bottom: 20px;
+}
+
+.btn {
+  font-size: 18px;
+  padding: 10px 40px;
+  align-self: center;
+  width: 80%;
+  background-color: #B0EFD1;
+  color: #000;
+  border-color: #B0EFD1;
+  transition: background-color 0.3s ease;
+  border-radius: 0.25rem;
+}
+
+.btn:hover {
+  background-color: #25c075 !important;
+  border-color: #81CBA7;
+  color: #fff;
+}
+
+.firmaDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.imagen-chica {
+  width: 170px;
+  height: 150px;
+}
+
+.imagen-firma {
+  width: 120px;
+  height: 120px;
+  padding-bottom: 40px;
+}
+
+.redes-sociales {
+  margin-top: 5%;
+  margin-right: 46px;
+}
+
+.redes-sociales a {
+  color: #fff;
+  margin-right: 13px;
+}
+
+.titulo {
+  color: #06914d;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.contact-email {
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background-color: #dedede;
+  padding: 8px 15px;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  color: #000;
+}
+
+.contact-email a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s forwards;
+}
+
+@media screen and (max-width: 1150px) {
+  .hero-image {
+    height: 300px;
+  }
+
+  .banner-text {
+    font-size: 20px;
+    margin-bottom: 2px;
+  }
+
+  .background {
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero-image {
+    height: 250px;
+  }
+
+  .banner-text {
+    font-size: 16px;
+    margin-bottom: 2px;
+  }
+
+  .card-body {
+    height: 250px;
+  }
+
+  .card-img {
+    height: 300px;
+  }
+
+  .background {
+    height: 400px;
+  }
+
+  .cardContainer h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 25px;
+    padding-left: 3%;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  p {
+    padding-left: 3%;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .hero-image {
+    height: 150px;
+  }
+
+  .banner-text {
+    font-size: 12px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+
+  .card {
+    height: auto;
+  }
+
+  .background {
+    height: 500px;
+  }
+
+  .image-container {
+    height: auto;
+  }
+
+  .card-img {
+    height: 350px;
+  }
+
+  .card-body {
+    height: auto;
+  }
+
+  .cardContainer h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 20px;
+    padding-left: 6%;
+  }
+
+  h3 {
+    font-size: 15px;
+  }
+
+  p {
+    padding-left: 4%;
+  }
+
+  .fa-3x {
+    font-size: 1.5em;
+  }
+}

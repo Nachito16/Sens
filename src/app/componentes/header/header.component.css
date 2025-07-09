@@ -1,0 +1,94 @@
+/* Add this CSS to your existing styles */
+
+/* Header styles for desktop */
+.header {
+  background-color: #f7f7f7;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.logo-container {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.logo-container img {
+  max-height: 50px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  padding-left: 25px;
+}
+
+.nav-link:hover {
+  text-decoration: none;
+}
+
+.hamburger-btn {
+  display: block; /* Show the hamburger button for both mobile and desktop */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.hamburger-line {
+  width: 30px;
+  height: 3px;
+  background-color: #000;
+  margin: 6px 0;
+}
+
+.desktop-menu {
+  display: flex;
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background-color: #a7a7a7;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 150px;
+  z-index: 1;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  transform-origin: top;
+  transform: scaleY(0);
+  transition: transform 0.2s ease;
+}
+
+.mobile-menu.active {
+  display: flex;
+  transform: scaleY(1);
+}
+
+.mobile-menu a {
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 10px 20px;
+}

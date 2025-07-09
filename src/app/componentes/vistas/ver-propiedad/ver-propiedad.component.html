@@ -1,0 +1,113 @@
+<div class="container mt-4">
+  <div class="property-image-carousel">
+    <button class="carousel-button prev-button" (click)="previousImage()">
+      <fa-icon [icon]="faChevronLeft"></fa-icon>
+    </button>
+    <div class="property-images">
+      <div
+        class="property-image"
+        *ngFor="let imagen of currentPropiedad.imagenes; let i = index"
+        [hidden]="i !== currentImageIndex"
+      >
+        <img [src]="imagen" alt="Property Image" />
+      </div>
+    </div>
+    <button class="carousel-button next-button" (click)="nextImage()">
+      <fa-icon [icon]="faChevronRight"></fa-icon>
+    </button>
+  </div>
+</div>
+
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-8 col-12 property-column">
+      <mat-card class="property-card">
+        <mat-card-header>
+          <mat-card-title class="property-title mb-2">{{
+            currentPropiedad.title
+          }}</mat-card-title>
+          <mat-card-subtitle class="property-price mb-2">{{
+            currentPropiedad.tipoNegocio
+          }}</mat-card-subtitle>
+          <mat-card-subtitle class="property-location mb-2">{{
+            currentPropiedad.location
+          }}</mat-card-subtitle>
+        </mat-card-header>
+
+        <mat-card-content>
+          <p class="property-description mb-2">
+            {{ currentPropiedad.description }}
+          </p>
+          <p class="property-price mb-2">
+            Precio: {{ "$" + formatCurrencyValue(currentPropiedad.price) }}
+          </p>
+          <p class="property-address mb-2">
+            Direccion: {{ currentPropiedad.direccion }}
+          </p>
+          <p class="property-address mb-2">
+            Esquina: {{ currentPropiedad.esquina }}
+          </p></mat-card-content
+        >
+      </mat-card>
+    </div>
+    <div class="col-md-4 col-12 property-column wppColumn">
+      <mat-card class="property-card">
+        <mat-card-content>
+          <h2>Envia tu consulta por WhatsApp</h2>
+          <div class="form-group">
+            <label for="questionInput">Escribe tu pregunta:</label>
+            <textarea
+              class="form-control"
+              id="questionInput"
+              [(ngModel)]="userQuestion"
+              name="userQuestion"
+              rows="3"
+            ></textarea>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button class="btn btn-primary" (click)="sendWhatsAppMessage()">
+            Enviar a WhatsApp
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>
+
+<div class="container my-4">
+  <div class="row my-5">
+    <div class="col-12">
+      <h2 class="titulo mb-5">Otras propiedades</h2>
+      <div class="row property-card-container">
+        <div
+          class="col-md-4 col-12 mb-4"
+          *ngFor="let propiedad of propiedadesDisponibles"
+        >
+          <mat-card class="property-card h-100">
+            <mat-card-header>
+              <mat-card-title class="property-title mb-2">{{
+                propiedad.title
+              }}</mat-card-title>
+              <mat-card-subtitle class="property-location mb-2">{{
+                propiedad.location
+              }}</mat-card-subtitle>
+              <mat-card-subtitle class="property-price mb-2">{{
+                "$" + formatCurrencyValue(propiedad.price)
+              }}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-actions>
+              <button
+                class="btn btn-primary"
+                (click)="navigateToProperty(propiedad.id)"
+              >
+                Ver propiedad
+              </button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

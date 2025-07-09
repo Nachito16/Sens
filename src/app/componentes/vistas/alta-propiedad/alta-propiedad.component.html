@@ -1,0 +1,137 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 titulo">
+        <h1>Alta de Propiedad</h1>
+      </div>
+      <div class="col-12">
+        <form [formGroup]="altaPropiedadForm">
+          <div class="form-group">
+            <label>Título</label>
+            <input
+              matInput
+              formControlName="title"
+              required
+              class="form-control"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Descripción</label>
+            <textarea
+              matInput
+              formControlName="description"
+              required
+              class="form-control"
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Precio</label>
+            <input
+              matInput
+              type="number"
+              formControlName="price"
+              required
+              class="form-control"
+            />
+          </div>
+          <div class="form-group">
+            <label>Tipo de Propiedad</label>
+            <mat-select formControlName="tipoPropiedad" disableRipple>
+              <mat-option *ngFor="let tipo of tipoPropiedad" [value]="tipo">
+                {{ tipo }}
+              </mat-option>
+            </mat-select>
+          </div>
+
+          <div class="form-group">
+            <label>Tipo de Negocio</label>
+            <mat-select formControlName="tipoNegocio" disableRipple>
+              <mat-option *ngFor="let negocio of tipoNegocio" [value]="negocio">
+                {{ negocio }}
+              </mat-option>
+            </mat-select>
+          </div>
+
+          <div class="form-group">
+            <label>Departamento</label>
+            <mat-select formControlName="location" disableRipple>
+              <mat-option
+                *ngFor="let departamento of location"
+                [value]="departamento"
+              >
+                {{ departamento }}
+              </mat-option>
+            </mat-select>
+          </div>
+
+          <div class="form-group">
+            <label>Dirección</label>
+            <input
+              matInput
+              formControlName="direccion"
+              required
+              class="form-control"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Esquina</label>
+            <input
+              matInput
+              formControlName="esquina"
+              required
+              class="form-control"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Imágenes</label>
+            <textarea
+              matInput
+              formControlName="imagenes"
+              class="form-control"
+              placeholder="Ingrese las URLs de las imágenes, separadas por comas"
+            ></textarea>
+          </div>
+
+          <button mat-raised-button color="primary" (click)="submitForm()">
+            Guardar
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- // alta-propiedad.component.ts 
+
+  Titulo: Casa de 2 dormitorios
+
+  Descripción: Casa en el Prado con 2 dormitorios, 1 baño, living comedor, cocina, patio y garaje para 2 autos con portón eléctrico y alarma. Se encuentra en una zona muy tranquila, a 1 cuadra de la Rambla y a 2 cuadras de la Plaza España. Los gastos comunes son de $ 2.000. Se necesita garantía de ANDA, Contaduría o Porto Seguro. No se aceptan mascotas. 
+
+  Precio: 35.000
+
+  Tipo de Propiedad: Apartamento
+
+  Tipo de Negocio: Alquiler
+
+  Departamento: Montevideo
+
+  Dirección: Av. Agraciada 1234
+
+  Esquina: Av. Sarmiento
+
+  Imagenes: 
+
+  https://drive.google.com/uc?id=1CoiUbR_Snw3BaeRHGmhbmqjKoROEtbt8,
+  https://drive.google.com/uc?id=1CsBUhGDNHSen-NINcVnZ-vD5nZ2qUIvq,
+  https://drive.google.com/uc?id=1DdWRvYYMZfzrkU8JzklsSDgB9Cj566d_,
+  https://drive.google.com/uc?id=1DMI1S1CljuXGwWy80jCEpb0ynSrf4h8q,
+  https://drive.google.com/uc?id=1DKfB3_7M_QT7-w3eeZ8vS9Z6QgTLMaAZ,
+  https://drive.google.com/uc?id=1DCX2-Mewu8Iyl7p0XuI6yS72hCeipR7r,
+  https://drive.google.com/uc?id=1DCX2-Mewu8Iyl7p0XuI6yS72hCeipR7r,
+  https://drive.google.com/uc?id=1DektOFJoFkBKMsh1XRToSWjijx1kTtbo 
+  
+-->

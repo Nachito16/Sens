@@ -1,0 +1,67 @@
+/* baja-propiedad.component.css */
+
+/* Style for the container of the property cards */
+.property-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* Center-align the cards */
+}
+
+/* Style for each property card */
+.property-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    width: 90%;
+    margin: 10px;
+    min-height: 307px;
+    /* Add some margin between the cards */
+}
+
+/* Style for property card title */
+.property-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Style for property card description */
+.property-card p {
+    margin-bottom: 5px;
+}
+
+/* Style for delete and edit buttons */
+.property-card button {
+    margin-top: 10px;
+    margin-right: 5px;
+}
+
+/* Style for delete button */
+.property-card button[color="warn"] {
+    color: #fff;
+    background-color: #dc3545;
+}
+
+/* Style for edit button */
+.property-card button[color="primary"] {
+    color: #fff;
+    background-color: #007bff;
+}
+
+.titulo {
+    color: #06914d;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+  }
+@media screen and (max-width: 426px) {
+    .titulo {
+        font-size: 30px;
+    }
+
+    .property-card {
+        width: 95%;
+    }
+  }

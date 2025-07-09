@@ -1,0 +1,84 @@
+/* Styling for the dialog panel */
+.mat-dialog-container {
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    max-height: 80vh; /* Set a maximum height for the modal */
+    overflow-y: auto; /* Enable vertical scroll when content exceeds the height */
+  }
+  
+  /* Styling for the modal title */
+  .modal-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+  
+  /* Styling for the edit form */
+  .edit-form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .editInput{
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  /* Styling for the input fields */
+  .mat-form-field {
+    width: 90%;
+  }
+  
+  .mat-input-element {
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .textarea{
+    min-height: 170px;
+  }
+  
+  /* Center the action buttons */
+  .action-buttons {
+    margin-top: 24px;
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+  }
+  
+  /* Styling for the button container */
+  .button-container {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .image-section {
+    margin-top: 24px;
+  }
+  
+  .image-section h4 {
+    margin-bottom: 8px;
+  }
+  
+  .image-section ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .image-section li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  
+  .image-section a {
+    flex: 1;
+  }
+  
+  /* Style the delete image link button */
+  button[mat-icon-button] {
+    margin-left: 8px;
+  }

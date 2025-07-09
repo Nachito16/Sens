@@ -1,0 +1,45 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 mt-5">
+        <h1 class="titulo">Listado de Propiedades</h1>
+      </div>
+      <div class="col-12 mb-5">
+        <div *ngIf="properties.length === 0">
+          No hay propiedades disponibles.
+        </div>
+        <div class="property-cards-container">
+          <div *ngFor="let property of properties" class="col-md-4 my-4">
+            <div class="property-card">
+              <h3>{{ property.title }}</h3>
+              <p class="detalleProp">Descripcion: {{ property.description }}</p>
+              <p>Precio: {{ property.price }}</p>
+              <p>Tipo de Propiedad: {{ property.tipoPropiedad }}</p>
+              <p>Tipo de Negocio: {{ property.tipoNegocio }}</p>
+              <p>Departamento: {{ property.location }}</p>
+              <p>Dirección: {{ property.direccion }}</p>
+              <p>Esquina: {{ property.esquina }}</p>
+              <div class="action-buttons">
+                <button
+                  mat-icon-button
+                  color="warn"
+                  (click)="deleteListing(property._id)"
+                >
+                  <mat-icon>delete</mat-icon>
+                </button>
+
+                <button
+                  mat-icon-button
+                  color="primary"
+                  (click)="editListing(property._id)"
+                >
+                  <mat-icon>edit</mat-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

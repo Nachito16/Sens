@@ -1,0 +1,131 @@
+<section>
+  <div class="container-fluid hero-image">
+    <img src="../../assets/heroImage.jpg" alt="Vista de la ciudad" class="city-image" />
+    <div class="overlay"></div>
+    <div class="text-overlay">
+      <h1 class="banner-text">Con nosotros invertir en tus sueños es posible</h1>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container my-5 cardContainer">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="d-flex align-items-center justify-content-center mb-4 titulo">
+          Propiedades destacadas
+        </h1>
+        <div class="card mt-5" *ngFor="let card of currentCardData.slice(-2)">
+          <div class="row no-gutters">
+            <div class="col-md-4 col-12">
+              <!-- Imagen -->
+              <div class="image-container">
+                <img [src]="card.imagenes[0]" class="card-img" alt="Imagen de la tarjeta" />
+              </div>
+            </div>
+            <div class="col-md-8 col-12">
+              <div class="card-body">
+                <!-- Información -->
+                <h3 class="card-title">{{ card.title }} </h3>
+                <h3 class="card-cap">{{ card.description }}</h3>
+                <h3>Precio: ${{ card.price }}</h3>
+                <button class="btn btn-primary" [routerLink]="'/ver-propiedad/' + card.id">
+                  Ver propiedad
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-12">
+        <div class="text-center">
+          <button class="btn btn-primary" (click)="goToPropiedades()">
+            Explorar otras propiedades
+          </button>
+
+          <!-- <button class="btn btn-primary" (click)="agregar()">
+            Agregar propiedad
+          </button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="background d-flex justify-content-center align-items-start">
+        <div
+          class="firmaDiv col-md-3 text-white d-flex flex-column align-items-center"
+          style="margin-top: 50px"
+        >
+          <img
+            src="../../../../assets/perfilLG.png"
+            alt="Imagen Chica"
+            class="imagen-chica"
+          />
+          <h3 class="m-0 mt-3">Lautaro Gonzalez</h3>
+          <img
+            src="../../../../assets/firmaLG.png"
+            alt="Firma"
+            class="imagen-firma"
+          />
+          <a
+            href="mailto:lautarogonzalezprop@gmail.com?subject=Dudas%20sobre%20la%20propiedad"
+            class="contact-email"
+            >Envíanos un mail</a
+          >
+        </div>
+
+        <div
+          class="aboutDiv col-md-7 text-white d-flex flex-column align-items-center"
+          style="margin-top: 50px"
+        >
+          <div class="textoAbout">
+            <h2>
+              Se ofrece un servicio de tasación de inmuebles
+            </h2>
+            <ul style="font-size: 18px">
+              <li>Casa</li>
+              <li>Edificios</li>
+              <li>Campos</li>
+              <li>Industria</li>
+              <!-- Agrega más servicios según tus necesidades -->
+            </ul>
+            <p>
+              Por otro tipo de tasación, no dude en consultarnos al whatsapp u
+              otra red social
+            </p>
+          </div>
+          <div class="redes-sociales">
+            <a
+              href="https://wa.me/+59898470393?text=Hola%20quiero%20más%20información"
+              target="_blank"
+            >
+              <i class="fab fa-whatsapp fa-3x"></i>
+              <!-- Icono de WhatsApp, agrandado 4 veces -->
+            </a>
+            <a
+              href="https://www.instagram.com/lgonzalezpropiedades1/?hl=es-la"
+              target="_blank"
+            >
+              <i class="fab fa-instagram fa-3x"></i>
+              <!-- Icono de Instagram, agrandado 3 veces -->
+            </a>
+            <a
+              href="https://www.tiktok.com/@lautarogonzalezprop"
+              target="_blank"
+            >
+              <i class="fab fa-tiktok fa-3x"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

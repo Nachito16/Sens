@@ -1,0 +1,17 @@
+<div class="dialog-content">
+  <button class="close-button" mat-icon-button (click)="closeDialog()">
+    <mat-icon>close</mat-icon>
+  </button>
+  <h2 class="dialog-title">{{ data.question }}</h2>
+  <input
+    class="dialog-input"
+    matInput
+    placeholder="Palabra clave"
+    type="password"
+    [(ngModel)]="keyword"
+    (keyup.enter)="checkKeyword()"
+  />
+  <button class="dialog-button" mat-button (click)="checkKeyword()">
+    Entrar
+  </button>
+</div>
