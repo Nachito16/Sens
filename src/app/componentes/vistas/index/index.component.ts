@@ -62,17 +62,6 @@ export class IndexComponent implements OnInit {
     }, 300); 
   }
 
-  goToPropiedades() {
-    this.router.navigateByUrl('/propiedades');
-    setTimeout(() => {
-      const element = document.getElementById('inicioProp');
-      if (element) {
-        const offset = 950;
-        element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
-        window.scrollBy(0, -offset);
-      }
-    });
-  }
 
 }
 

@@ -1,7 +1,7 @@
 .hero-image {
   position: relative;
   width: 100%;
-  height: 500px;
+  height: 770px;
   overflow: hidden;
 }
 
@@ -9,10 +9,48 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  animation: zoomEffect 10s ease infinite alternate;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   z-index: 0;
 }
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* opcional para oscurecer un poco */
+  z-index: 1;
+}
+
+.hero-button-container {
+  position: absolute;
+  bottom: 120px; /* posición más baja */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.hero-button {
+  background-color: #FFB82A;
+  color: #104750;
+  padding: 12px 28px;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.hero-button:hover {
+  background-color: #e0a324;
+  color: white;
+}
+
 
 @keyframes zoomEffect {
   0% {
@@ -39,7 +77,7 @@
   align-items: center;
 }
 
-.nosotros-section {
+.sectionIndex {
   background-color: rgba(0, 0, 0, 0.5); 
   color: white;
   padding:0px 10px 10px 10px;
@@ -48,9 +86,10 @@
   margin: 60px auto;
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  scroll-margin-top: 120px;
 }
 
-.nosotros-section h3 {
+.sectionIndex h3 {
   font-size: 28px;
   margin-bottom: 20px;
   margin-top: 20px;
@@ -60,7 +99,7 @@
   text-align:center;
 }
 
-.nosotros-section p {
+.sectionIndex p {
   font-size: 16px;
   line-height: 1.6;
   margin-bottom: 20px;
@@ -69,7 +108,7 @@
 
 @media screen and (max-width: 1150px) {
   .hero-image {
-    height: 400px; /* subí de 300 a 400 */
+    height: 400px;
   }
 
   .banner-text {
@@ -80,7 +119,7 @@
 
 @media screen and (max-width: 768px) {
   .hero-image {
-    height: 320px; /* subí de 250 a 320 */
+    height: 320px; 
   }
 
   .banner-text {
@@ -91,7 +130,7 @@
 
 @media screen and (max-width: 426px) {
   .hero-image {
-    height: 240px; /* subí de 150 a 240 */
+    height: 240px; 
   }
 
   .banner-text {
