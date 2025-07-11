@@ -58,7 +58,7 @@
   }
 
   50% {
-    transform: scale(1.2);
+    transform: scale(1.7);
   }
 
   100% {
@@ -108,7 +108,7 @@
 
 @media screen and (max-width: 1150px) {
   .hero-image {
-    height: 400px;
+    height: 500px;
   }
 
   .banner-text {
@@ -119,18 +119,24 @@
 
 @media screen and (max-width: 768px) {
   .hero-image {
-    height: 320px; 
+    height: 420px; 
   }
 
   .banner-text {
     font-size: 20px;
     margin-bottom: 4px;
   }
+
+  .hero-button-container {
+
+  bottom: 20px; /* posición más baja */
+
+}
 }
 
 @media screen and (max-width: 426px) {
   .hero-image {
-    height: 240px; 
+    height: 340px; 
   }
 
   .banner-text {
