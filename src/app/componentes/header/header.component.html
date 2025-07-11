@@ -7,8 +7,15 @@
       </a>
     </div>
 
+    <!-- Hamburger icon (visible solo en mobile) -->
+    <button class="hamburger-btn" (click)="toggleMenu()">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+
     <!-- Navigation links -->
-    <nav class="navbar-links">
+    <nav class="navbar-links" [class.active]="isMenuOpen">
       <a class="nav-link" (click)="scrollTo('nosotros')">Nosotros</a>
       <a class="nav-link" (click)="scrollTo('inicio')">Equipo</a>
       <a class="nav-link" (click)="scrollTo('propiedades')">Elegirnos</a>

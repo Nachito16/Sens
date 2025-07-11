@@ -7,11 +7,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  scrollTo(sectionId: string): void {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+   scrollTo(id: string): void {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
     }
+    this.isMenuOpen = false; 
   }
 
 
@@ -38,7 +39,11 @@ export class HeaderComponent {
     this.isMobileMenuOpen = false;
   }
 
-  toggleMenu() {
-    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  isMenuOpen = false;
+
+  toggleMenu(): void {
+    this.isMenuOpen = !this.isMenuOpen;
   }
+
+
 }
