@@ -1,5 +1,5 @@
 .footer {
-    background-color: #a7a7a7;
+    background-color: #104750;
     padding: 10px;
     text-align: center;
     position: relative;
@@ -15,12 +15,12 @@
 }
 
 .icon {
-    color: #000;
+    color: white;
     font-size: 24px;
     margin-right: 5px;
 }
 
 .text {
-    color: #000;
+    color: white;
     font-size: 14px;
 }

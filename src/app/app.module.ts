@@ -20,13 +20,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './componentes/header/header.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { IndexComponent } from './componentes/vistas/index/index.component';
-import { PropiedadesComponent } from './componentes/vistas/propiedades/propiedades.component';
-import { AltaPropiedadComponent } from './componentes/vistas/alta-propiedad/alta-propiedad.component';
-import { BajaPropiedadComponent } from './componentes/vistas/baja-propiedad/baja-propiedad.component';
-import { VerPropiedadComponent } from './componentes/vistas/ver-propiedad/ver-propiedad.component';
-import { EditPropertyModalComponent } from './componentes/vistas/baja-propiedad/edit-property-modal/edit-property-modal.component';
-import { DialogAltaComponent } from './componentes/vistas/alta-propiedad/dialogAlta.component';
-import { DialogBajaComponent } from './componentes/vistas/baja-propiedad/dialogBaja.component';
+
 
 @NgModule({
   declarations: [
@@ -34,13 +28,7 @@ import { DialogBajaComponent } from './componentes/vistas/baja-propiedad/dialogB
     HeaderComponent,
     FooterComponent,
     IndexComponent,
-    PropiedadesComponent,
-    AltaPropiedadComponent,
-    BajaPropiedadComponent,
-    VerPropiedadComponent,
-    EditPropertyModalComponent,
-    DialogAltaComponent,
-    DialogBajaComponent,
+
   ],
   imports: [
     BrowserModule,

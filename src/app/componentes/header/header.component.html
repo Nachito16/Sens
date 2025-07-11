@@ -1,23 +1,19 @@
 <header class="header" id="inicioIndex">
   <div class="header-content">
-    <div class="navbar">
-      <!-- Hamburger menu button -->
-      <button class="hamburger-btn" (click)="toggleMenu()">
-        <div class="hamburger-line"></div>
-        <div class="hamburger-line"></div>
-        <div class="hamburger-line"></div>
-      </button>
-
-      <!-- Mobile menu items -->
-      <div class="mobile-menu" [class.active]="isMobileMenuOpen">
-        <a class="nav-link" (click)="goToInicio()">Incio</a>
-        <a class="nav-link" (click)="goToPropiedades()">Propiedades</a>
-      </div>
-    </div>
+    <!-- Logo -->
     <div class="logo-container">
       <a (click)="goToInicioDirectly()">
-        <img src="../../../assets/logo.png" alt="Logo" />
+        <img src="../../../assets/sensLogo.png" alt="Logo" />
       </a>
     </div>
+
+    <!-- Navigation links -->
+    <nav class="navbar-links">
+      <a class="nav-link" (click)="scrollTo('nosotros')">Nosotros</a>
+      <a class="nav-link" (click)="scrollTo('inicio')">Equipo</a>
+      <a class="nav-link" (click)="scrollTo('propiedades')">Elegirnos</a>
+      <a class="nav-link" (click)="scrollTo('servicios')">Visitarnos</a>
+      <a class="nav-link" (click)="scrollTo('contacto')">Ofrecemos</a>
+    </nav>
   </div>
 </header>

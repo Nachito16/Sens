@@ -7,6 +7,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+  scrollTo(sectionId: string): void {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
 
   isMobileMenuOpen: boolean = false;
 
@@ -15,41 +22,6 @@ export class HeaderComponent {
   ngOnInit(): void {
   }
 
-  goToPropiedades() {
-    // Navegar al componente "propiedades"
-    this.router.navigateByUrl('/propiedades');
-    // Esperar un breve momento antes de desplazarse al comienzo de la página
-    setTimeout(() => {
-      const element = document.getElementById('inicioProp');
-      if (element) {
-        const offset = 950; // Ajusta el valor según sea necesario
-        element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
-        window.scrollBy(0, -offset);
-      }
-    }); // Puedes ajustar este tiempo según sea necesario
-
-    // Cerrar el menú móvil después de seleccionar una opción
-    this.toggleMenu();
-  }
-
-  goToInicio() {
-    this.router.navigateByUrl('/');
-
-    // Ajusta el tiempo del setTimeout para que sea lo más rápido posible, 50ms en este ejemplo
-    setTimeout(() => {
-      const element = document.getElementById('inicioIndex');
-      if (element) {
-        const offset = 1650; // Ajusta el valor según sea necesario
-
-        // Utiliza 'scrollIntoView' con 'behavior: 'smooth'' para el desplazamiento suave
-        element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
-        window.scrollBy(0, -offset);
-      }
-    }, 50); // Puedes ajustar este tiempo según sea necesario
-
-    // Cerrar el menú móvil después de seleccionar una opción
-    this.toggleMenu();
-  }
 
   goToInicioDirectly() {
     this.router.navigateByUrl('/');
