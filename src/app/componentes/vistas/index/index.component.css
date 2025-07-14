@@ -80,30 +80,119 @@
 .sectionIndex {
   background-color: rgba(0, 0, 0, 0.5); 
   color: white;
-  padding:0px 10px 10px 10px;
+  padding: 0px 10px 10px 10px;
   text-align: left;
-  max-width: 900px;
+  max-width: 1200px; /* Aumentamos el ancho */
   margin: 60px auto;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
   scroll-margin-top: 120px;
 }
 
+
 .sectionIndex h3 {
-  font-size: 28px;
-  margin-bottom: 20px;
-  margin-top: 20px;
-  font-weight: 600;
-  display: inline-block;
+  font-size: 32px;       /* Antes: 28px */
+  margin-bottom: 24px;
+  margin-top: 24px;
+  font-weight: 700;
+  display: block;
   color: #FFB82A;
-  text-align:center;
+  text-align: center;
 }
 
+
+
 .sectionIndex p {
-  font-size: 16px;
-  line-height: 1.6;
-  margin-bottom: 20px;
+  font-size: 18px;       /* Antes: 16px */
+  line-height: 1.8;      /* Más espacio entre líneas */
+  margin-bottom: 24px;
 }
+
+
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.2);
+}
+
+.carousel-img {
+  height: 400px; /* Ajustá la altura como prefieras */
+  object-fit: cover;
+  object-position: center;
+}
+.carousel-img-multi {
+  width: 22%;         /* 4 imágenes con espacio */
+  height: 200px;       /* o el alto que necesites */
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.carousel-img-multi:hover {
+  transform: scale(1.05);
+}
+
+.visit-button-container {
+  margin-top: 30px;
+}
+
+.visit-button {
+  background-color: #FFB82A;
+  color: #104750;
+  padding: 12px 32px;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.visit-button:hover {
+  background-color: #e0a324;
+  color: white;
+}
+
+
+
+@media (max-width: 768px) {
+  .carousel-img-multi {
+    width: 45%;
+    height: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-img-multi {
+    width: 90%;
+    margin: 0 auto;
+    height: 150px;
+  }
+
+  .d-flex.gap-3 {
+    flex-wrap: wrap;
+    justify-content: center !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-img-multi {
+    width: 30%; /* 3 por fila en tablet/móvil */
+    height: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-img-multi {
+    width: 45%; /* 2 por fila en móvil chico */
+    height: 140px;
+  }
+}
+
 
 
 @media screen and (max-width: 1150px) {

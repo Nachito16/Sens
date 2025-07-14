@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   z-index: 1000; /* Asegura que quede encima de todo */
-  background-color: #104750; /* Fondo blanco o el que prefieras */
+  background-color: #0a3940; /* Fondo blanco o el que prefieras */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra opcional */
   
 }

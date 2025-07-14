@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { baseMongo } from '../../../servicios/baseMongo';
 import { tipoNegocio } from 'src/app/dataTypes/enums';
 
-interface Card{
+declare var bootstrap: any; // Necesario para usar Bootstrap JS
+
+interface Card {
   id: any | string;
   title: string;
   description: string;
@@ -17,7 +19,7 @@ interface Card{
   templateUrl: './index.component.html',
   styleUrls: ['./index.component.css']
 })
-export class IndexComponent implements OnInit {
+export class IndexComponent implements OnInit, AfterViewInit {
   currentCardData: Card[] = [];
   loading: boolean = true;
   error: boolean = false;
@@ -54,14 +56,25 @@ export class IndexComponent implements OnInit {
         this.error = true;
       }
     );
+
     setTimeout(() => {
       const contactEmail = document.querySelector('.contact-email');
       if (contactEmail) {
         contactEmail.classList.add('fade-in');
       }
-    }, 300); 
+    }, 300);
+  }
+
+  ngAfterViewInit(): void {
+    const carouselElement = document.querySelector('#carouselNosotros');
+    if (carouselElement) {
+      new bootstrap.Carousel(carouselElement, {
+        interval: 4000,
+        ride: 'carousel',
+        pause: false
+      });
+    }
   }
 
 
 }
-
