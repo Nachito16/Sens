@@ -187,13 +187,30 @@
         <h3 class="mb-3" style="text-align: left">Visitarnos</h3>
         <p><strong>Dirección:</strong> Colonia 2311</p>
         <p><strong>Horario:</strong> Lunes a Sábado de 10:00 a 20:00</p>
-        <p>A solo 2 cuadras de Tres Cruces. Podés dejar el auto GRATIS por 2 horas en el
-          estacionamiento.</p>
+        <p>
+          A solo 2 cuadras de Tres Cruces. Podés dejar el auto GRATIS por 2 horas en el estacionamiento.
+        </p>
 
-        <div class="visit-button-container mt-4 text-center text-md-start">
+        <!-- Contenedor del botón + redes -->
+        <div class="visit-button-container mt-4 d-flex align-items-center gap-3 flex-wrap">
+          <!-- Botón principal -->
+
+          <!-- Botones de redes -->
+          <a href="https://www.instagram.com/sens_barberia/?hl=en" target="_blank"
+            class="btn instagram-button d-flex justify-content-center align-items-center p-2"
+            style="width: 48px; height: 48px;">
+            <img src="assets/instagram.png" alt="Instagram" style="height: 24px;" />
+          </a>
+
+          <a href="https://wa.me/59891123456" target="_blank"
+            class="btn whatsapp-button d-flex justify-content-center align-items-center p-2"
+            style="width: 48px; height: 48px;">
+            <img src="assets/whatsApp.svg" alt="WhatsApp" style="height: 24px;" />
+          </a>
           <a href="https://book.weibook.co/sensbarberia" target="_blank" class="visit-button">
             Reservá tu turno
           </a>
+
         </div>
       </div>
 
@@ -236,20 +253,85 @@
   </div>
 </section>
 
-<section id="ofrecemos" class="sectionIndex">
-  <div class="container mt-5">
-    <div class="row">
-      <h3>Tambien brindamos....</h3>
-      <p>En SENS Barbería nos dedicamos al cuidado integral del hombre, combinando estilo, comodidad y una atención
-        personalizada.
-        Nuestro equipo de profesionales trabaja para que cada corte y arreglo refleje tu identidad, manteniéndote
-        siempre impecable.
-      </p>
-      <p>
-        Pero SENS es mucho más que una barbería: mientras esperás tu turno, podés relajarte jugando una partida de pool,
-        disfrutar de la Play o simplemente tomarte un buen café o chocolate caliente.
-      </p>
-      <p>Vení a vivir una experiencia distinta, donde cada detalle está pensado para vos.</p>
+<section id="ofrecemos" class="sectionIndex py-5">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <!-- Carrusel izquierdo -->
+      <div class="col-md-4">
+        <div id="carouselLeft" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="card">
+                <img src="assets/pool.jpg" class="card-img-top" alt="Pool">
+                <div class="card-body">
+                  <p class="card-text text-center">Partidas de pool</p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="card">
+                <img src="assets/play.jpg" class="card-img-top" alt="Play">
+                <div class="card-body">
+                  <p class="card-text text-center">Consola para jugar</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Texto central -->
+      <div class="col-md-4 text-center">
+        <h3>También brindamos...</h3>
+        <p>Servicio de tatuaje con Pablo Ferreira</p>
+
+        <p>Podés ver su trabajo o agendar tu turno directamente:</p>
+
+        <div class="d-flex justify-content-center gap-3 mt-3">
+          <!-- Botón Instagram -->
+          <a href="https://www.instagram.com/pfink97/?hl=en" target="_blank"
+            class="btn instagram-button d-flex justify-content-center align-items-center p-2"
+            style="width: 68px; height: 48px;">
+            <img src="assets/instagram.png" alt="Instagram" style="height: 24px;" />
+          </a>
+
+          <!-- Botón WhatsApp -->
+          <a href="https://api.whatsapp.com/message/GKFWH253MPB2J1?autoload=1&app_absent=0" target="_blank"
+            class="btn whatsapp-button d-flex justify-content-center align-items-center p-2"
+            style="width: 68px; height: 48px;">
+            <img src="assets/whatsApp.svg" alt="WhatsApp" style="height: 24px;" />
+          </a>
+        </div>
+
+
+      </div>
+
+
+      <!-- Carrusel derecho -->
+      <div class="col-md-4">
+        <div id="carouselRight" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="card">
+                <img src="assets/cafe.jpg" class="card-img-top" alt="Café">
+                <div class="card-body">
+                  <p class="card-text text-center">Café o chocolate caliente</p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="card">
+                <img src="assets/relax.jpg" class="card-img-top" alt="Relax">
+                <div class="card-body">
+                  <p class="card-text text-center">Espacios para relajarte</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
