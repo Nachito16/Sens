@@ -19,53 +19,15 @@ interface Card {
   templateUrl: './index.component.html',
   styleUrls: ['./index.component.css']
 })
-export class IndexComponent implements OnInit, AfterViewInit {
+export class IndexComponent implements AfterViewInit {
   currentCardData: Card[] = [];
   loading: boolean = true;
   error: boolean = false;
 
   constructor(private router: Router, private baseMongo: baseMongo) { }
 
-  ngOnInit(): void {
-    this.baseMongo.getListing().subscribe(
-      (propiedadesDesdeBackend: any) => {
-        this.currentCardData = propiedadesDesdeBackend.map(
-          (property: {
-            _id: any;
-            title: any;
-            description: any;
-            tipoNegocio: any;
-            price: any;
-            imagenes: any;
-          }) => {
-            return {
-              id: property._id,
-              title: property.title,
-              description: property.description,
-              tipoNegocio: property.tipoNegocio,
-              price: property.price,
-              imagenes: property.imagenes,
-            };
-          }
-        );
-        this.loading = false;
-      },
-      (error) => {
-        console.error(error);
-        this.loading = false;
-        this.error = true;
-      }
-    );
-
-    setTimeout(() => {
-      const contactEmail = document.querySelector('.contact-email');
-      if (contactEmail) {
-        contactEmail.classList.add('fade-in');
-      }
-    }, 300);
-  }
-
   ngAfterViewInit(): void {
+    // Inicializa el carrusel Bootstrap clásico (si seguís usándolo)
     const carouselElement = document.querySelector('#carouselNosotros');
     if (carouselElement) {
       new bootstrap.Carousel(carouselElement, {
@@ -74,7 +36,18 @@ export class IndexComponent implements OnInit, AfterViewInit {
         pause: false
       });
     }
-  }
 
+    const customCarousel = document.getElementById('customCarousel');
+    const track = customCarousel?.querySelector('.carousel-track');
+
+    let isPaused = false;
+
+    customCarousel?.addEventListener('click', () => {
+      isPaused = !isPaused;
+      if (track) {
+        (track as HTMLElement).style.animationPlayState = isPaused ? 'paused' : 'running';
+      }
+    });
+  }
 
 }
