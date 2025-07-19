@@ -50,6 +50,11 @@
   background-color: #e0a324;
   color: white;
 }
+.zoom-img-wrapper {
+  overflow: hidden;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
 
 
 @keyframes zoomEffect {
