@@ -26,51 +26,62 @@ export class IndexComponent implements AfterViewInit {
 
   constructor(private router: Router, private baseMongo: baseMongo) { }
 
- ngAfterViewInit(): void {
-  // Inicializar todos los carruseles Bootstrap clásicos
-  const carousels = document.querySelectorAll('.carousel');
-  carousels.forEach(carousel => {
-    new bootstrap.Carousel(carousel, {
-      interval: 4000,
-      ride: 'carousel',
-      pause: false
+  ngAfterViewInit(): void {
+    // Inicializar todos los carruseles Bootstrap clásicos
+    const carousels = document.querySelectorAll('.carousel');
+    carousels.forEach(carousel => {
+      new bootstrap.Carousel(carousel, {
+        interval: 4000,
+        ride: 'carousel',
+        pause: false
+      });
     });
-  });
 
-  // Pausar animaciones por clic en carruseles personalizados
-  const customCarousels = document.querySelectorAll('.carousel-wrapper');
+    // Pausar animaciones por clic en carruseles personalizados
+    const customCarousels = document.querySelectorAll('.carousel-wrapper');
 
-  customCarousels.forEach((carouselWrapper) => {
-    const track = carouselWrapper.querySelector('.carousel-track');
-    let isPaused = false;
-    let resumeTimeout: number | undefined;
+    customCarousels.forEach((carouselWrapper) => {
+      const track = carouselWrapper.querySelector('.carousel-track');
+      let isPaused = false;
+      let resumeTimeout: number | undefined;
 
-    carouselWrapper.addEventListener('click', () => {
-      // Limpiamos cualquier timeout anterior
-      if (resumeTimeout) {
-        clearTimeout(resumeTimeout);
-      }
+      carouselWrapper.addEventListener('click', () => {
+        // Limpiamos cualquier timeout anterior
+        if (resumeTimeout) {
+          clearTimeout(resumeTimeout);
+        }
 
-      // Toggle de pausa/reanudación
-      isPaused = !isPaused;
+        // Toggle de pausa/reanudación
+        isPaused = !isPaused;
 
-      if (track instanceof HTMLElement) {
-        track.style.animationPlayState = isPaused ? 'paused' : 'running';
-      }
+        if (track instanceof HTMLElement) {
+          track.style.animationPlayState = isPaused ? 'paused' : 'running';
+        }
 
-      // Si se pausó, programamos la reanudación automática en 3 segundos
-      if (isPaused) {
-        resumeTimeout = window.setTimeout(() => {
-          isPaused = false;
-          if (track instanceof HTMLElement) {
-            track.style.animationPlayState = 'running';
-          }
-        }, 3000);
-      }
+        // Si se pausó, programamos la reanudación automática en 3 segundos
+        if (isPaused) {
+          resumeTimeout = window.setTimeout(() => {
+            isPaused = false;
+            if (track instanceof HTMLElement) {
+              track.style.animationPlayState = 'running';
+            }
+          }, 3000);
+        }
+      });
     });
-  });
-}
+
+    const video = document.querySelector('video');
+    if (video) {
+      video.play().then(() => {
+        console.log('✅ Video autoplay funcionó');
+      }).catch((err) => {
+        console.error('❌ Error al intentar reproducir el video:', err);
+      });
+    }
+
+  }
 
 
-  
+
+
 }
