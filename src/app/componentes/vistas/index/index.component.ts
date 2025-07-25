@@ -70,18 +70,6 @@ export class IndexComponent implements AfterViewInit {
       });
     });
 
-    const video = document.querySelector('video');
-    if (video) {
-      video.play().then(() => {
-        console.log('✅ Video autoplay funcionó');
-      }).catch((err) => {
-        console.error('❌ Error al intentar reproducir el video:', err);
-      });
-    }
-
   }
-
-
-
 
 }
