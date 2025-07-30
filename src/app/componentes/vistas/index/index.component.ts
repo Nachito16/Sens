@@ -26,50 +26,32 @@ export class IndexComponent implements AfterViewInit {
 
   constructor(private router: Router, private baseMongo: baseMongo) { }
 
-  ngAfterViewInit(): void {
-    // Inicializar todos los carruseles Bootstrap clásicos
-    const carousels = document.querySelectorAll('.carousel');
-    carousels.forEach(carousel => {
-      new bootstrap.Carousel(carousel, {
-        interval: 4000,
-        ride: 'carousel',
-        pause: false
-      });
-    });
+ngAfterViewInit(): void {
+  const carouselTrack = document.querySelector('.carousel-track') as HTMLElement;
+  const carouselWrapper = document.querySelector('.carousel-wrapper') as HTMLElement;
 
-    // Pausar animaciones por clic en carruseles personalizados
-    const customCarousels = document.querySelectorAll('.carousel-wrapper');
+  if (!carouselTrack || !carouselWrapper) return;
 
-    customCarousels.forEach((carouselWrapper) => {
-      const track = carouselWrapper.querySelector('.carousel-track');
-      let isPaused = false;
-      let resumeTimeout: number | undefined;
+  // Clonamos el contenido (loop real)
+  carouselTrack.innerHTML += carouselTrack.innerHTML;
 
-      carouselWrapper.addEventListener('click', () => {
-        // Limpiamos cualquier timeout anterior
-        if (resumeTimeout) {
-          clearTimeout(resumeTimeout);
-        }
+  let position = 0;
+  const speed = 1; // pixeles por frame
 
-        // Toggle de pausa/reanudación
-        isPaused = !isPaused;
+  function animate() {
+    position -= speed;
+    const totalWidth = carouselTrack.scrollWidth / 2;
 
-        if (track instanceof HTMLElement) {
-          track.style.animationPlayState = isPaused ? 'paused' : 'running';
-        }
+    if (Math.abs(position) >= totalWidth) {
+      position = 0; // reinicia sin parpadeo
+    }
 
-        // Si se pausó, programamos la reanudación automática en 3 segundos
-        if (isPaused) {
-          resumeTimeout = window.setTimeout(() => {
-            isPaused = false;
-            if (track instanceof HTMLElement) {
-              track.style.animationPlayState = 'running';
-            }
-          }, 3000);
-        }
-      });
-    });
-
+    carouselTrack.style.transform = `translateX(${position}px)`;
+    requestAnimationFrame(animate);
   }
+
+  animate();
+}
+
 
 }
