@@ -26,32 +26,50 @@ export class IndexComponent implements AfterViewInit {
 
   constructor(private router: Router, private baseMongo: baseMongo) { }
 
-ngAfterViewInit(): void {
-  const carouselTrack = document.querySelector('.carousel-track') as HTMLElement;
-  const carouselWrapper = document.querySelector('.carousel-wrapper') as HTMLElement;
+  ngAfterViewInit(): void {
+    // Inicializar todos los carruseles Bootstrap clásicos
+    const carousels = document.querySelectorAll('.carousel');
+    carousels.forEach(carousel => {
+      new bootstrap.Carousel(carousel, {
+        interval: 4000,
+        ride: 'carousel',
+        pause: false
+      });
+    });
 
-  if (!carouselTrack || !carouselWrapper) return;
+    // Pausar animaciones por clic en carruseles personalizados
+    const customCarousels = document.querySelectorAll('.carousel-wrapper');
 
-  // Clonamos el contenido (loop real)
-  carouselTrack.innerHTML += carouselTrack.innerHTML;
+    customCarousels.forEach((carouselWrapper) => {
+      const track = carouselWrapper.querySelector('.carousel-track');
+      let isPaused = false;
+      let resumeTimeout: number | undefined;
 
-  let position = 0;
-  const speed = 1; // pixeles por frame
+      carouselWrapper.addEventListener('click', () => {
+        // Limpiamos cualquier timeout anterior
+        if (resumeTimeout) {
+          clearTimeout(resumeTimeout);
+        }
 
-  function animate() {
-    position -= speed;
-    const totalWidth = carouselTrack.scrollWidth / 2;
+        // Toggle de pausa/reanudación
+        isPaused = !isPaused;
 
-    if (Math.abs(position) >= totalWidth) {
-      position = 0; // reinicia sin parpadeo
-    }
+        if (track instanceof HTMLElement) {
+          track.style.animationPlayState = isPaused ? 'paused' : 'running';
+        }
 
-    carouselTrack.style.transform = `translateX(${position}px)`;
-    requestAnimationFrame(animate);
+        // Si se pausó, programamos la reanudación automática en 3 segundos
+        if (isPaused) {
+          resumeTimeout = window.setTimeout(() => {
+            isPaused = false;
+            if (track instanceof HTMLElement) {
+              track.style.animationPlayState = 'running';
+            }
+          }, 3000);
+        }
+      });
+    });
+
   }
-
-  animate();
-}
-
 
 }

@@ -140,8 +140,33 @@
   transition: transform 0.5s ease;
   animation: scrollCarousel 20s linear infinite;
 }
+.carousel-track-jugadores {
+  display: flex;
+  gap: 1rem;
+  transition: transform 0.5s ease;
+  animation: scrollCarouselJugadores 20s linear infinite;
+}
 
+.carousel-img-multi {
+  height: 250px;
+  flex-shrink: 0;
+  width: 25%; /* 4 por fila en desktop */
+  object-fit: cover;
+}
 
+/* Tablet: 2 por fila */
+@media (max-width: 992px) {
+  .carousel-img-multi {
+    width: 50%;
+  }
+}
+
+/* Mobile: 1 por fila */
+@media (max-width: 576px) {
+  .carousel-img-multi {
+    width: 100%;
+  }
+}
 
 /* Animación estándar: derecha a izquierda */
 @keyframes scrollCarousel {
@@ -149,7 +174,15 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-120%);
+    transform: translateX(-260%);
+  }
+}
+@keyframes scrollCarouselJugadores {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-135%);
   }
 }
 
@@ -181,14 +214,6 @@
   animation: scrollCarouselReverse 20s linear infinite;
 }
 
-
-@media (max-width: 768px) {
-  .carousel-track {
-    animation: scrollCarousel 4s linear infinite; /* Más rápido */
-  }
-}
-
-
 .carousel-img-multi {
   height: 440px; /* AUMENTADO */
   flex-shrink: 0;
@@ -197,18 +222,66 @@
 }
 
 
-
-
+/* ===================== CARRUSELES EN MOBILE: IMÁGENES GRANDES ===================== */
 @media (max-width: 768px) {
   .carousel-img-multi {
-    width: 100%;                /* ocupar todo el ancho disponible */
-    height: 400px;              /* mantener la altura deseada */
-    object-fit: contain;        /* mostrar la imagen completa */
+    width: 70% !important;
+    height: 220px !important;
+  }
+
+  .carousel-track {
+    animation: scrollCarouselMobile 20s linear infinite !important;
+  }
+
+  .carousel-track.reverse {
+    animation: scrollCarouselReverseMobile 20s linear infinite !important;
+  }
+
+  .carousel-track-jugadores {
+    animation: scrollCarouselJugadoresMobile 20s linear infinite !important;
   }
 }
 
+@media (max-width: 480px) {
+  .carousel-img-multi {
+    width: 90% !important;
+    height: 460px !important;
+    margin: 0 auto;
+  }
 
+  .d-flex.gap-3 {
+    flex-wrap: wrap;
+    justify-content: center !important;
+  }
+}
 
+/* ===================== ANIMACIONES MOBILE MÁS RÁPIDAS ===================== */
+@keyframes scrollCarouselMobile {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-1200%);
+  }
+}
+
+@keyframes scrollCarouselReverseMobile {
+  0% {
+    transform: translateX(-260%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes scrollCarouselJugadoresMobile {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-740%);
+  }
+}
 
 
 .visit-button-container {
@@ -296,6 +369,43 @@
   background: rgba(0,0,0,0.3);
   z-index: 1;
 }
+
+
+
+@media (max-width: 768px) {
+  .carousel-img-multi {
+    width: 45%;
+    height: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-img-multi {
+    width: 90%;
+    margin: 0 auto;
+    height: 150px;
+  }
+
+  .d-flex.gap-3 {
+    flex-wrap: wrap;
+    justify-content: center !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-img-multi {
+    width: 30%; /* 3 por fila en tablet/móvil */
+    height: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-img-multi {
+    width: 45%; /* 2 por fila en móvil chico */
+    height: 140px;
+  }
+}
+
 
 
 @media screen and (max-width: 1150px) {
