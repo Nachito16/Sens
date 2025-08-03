@@ -222,7 +222,6 @@
 }
 
 
-/* ===================== CARRUSELES EN MOBILE: IMÁGENES GRANDES ===================== */
 @media (max-width: 768px) {
   .carousel-img-multi {
     width: 70% !important;
@@ -255,7 +254,6 @@
   }
 }
 
-/* ===================== ANIMACIONES MOBILE MÁS RÁPIDAS ===================== */
 @keyframes scrollCarouselMobile {
   0% {
     transform: translateX(0);
