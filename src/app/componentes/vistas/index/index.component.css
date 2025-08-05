@@ -4,10 +4,8 @@
   width: 100%;
   overflow: hidden;
 }
-
 .hero-image { height: 770px; }
 .hero-video { height: 860px; }
-
 .city-image,
 .city-video {
   position: absolute;
@@ -18,18 +16,15 @@
   object-fit: cover;
   z-index: 0;
 }
-
 .city-image {
   filter: brightness(1.4) contrast(1.1) saturate(1.1);
 }
-
 .city-video {
   top: 50%;
   left: 50%;
   min-width: 1200px;
   transform: translate(-50%, -50%);
 }
-
 .overlay {
   position: absolute;
   top: 0;
@@ -39,7 +34,6 @@
   background: rgba(0, 0, 0, 0.3);
   z-index: 1;
 }
-
 .hero-button-container {
   position: absolute;
   bottom: 220px;
@@ -47,7 +41,6 @@
   transform: translateX(-50%);
   z-index: 2;
 }
-
 .hero-button,
 .visit-button {
   background-color: #FFB82A;
@@ -61,26 +54,21 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
 }
-
 .hero-button:hover,
 .visit-button:hover {
   background-color: #e0a324;
   color: white;
 }
-
 .visit-button-container { margin-top: 30px; }
-
 .zoom-img-wrapper {
   overflow: hidden;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
 }
-
 @keyframes zoomEffect {
   0%, 100% { transform: scale(1.1); }
   50% { transform: scale(1.7); }
 }
-
 .banner-text {
   font-size: 40px;
   font-weight: 400;
@@ -91,7 +79,6 @@
   justify-content: center;
   align-items: center;
 }
-
 .sectionIndex {
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
@@ -103,7 +90,6 @@
   box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
   scroll-margin-top: 120px;
 }
-
 .sectionIndex h3 {
   font-size: 32px;
   margin: 24px 0;
@@ -111,34 +97,28 @@
   color: #FFB82A;
   text-align: center;
 }
-
 .sectionIndex p {
   font-size: 18px;
   line-height: 1.8;
   margin-bottom: 24px;
 }
-
 .card-hover,
 .cardTatujae {
   transition: transform 0.3s ease;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   border: none;
 }
-
 .card-hover:hover,
 .cardTatujae:hover {
   transform: scale(1.03);
 }
-
 .card-hover:hover {
   box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.2);
 }
-
 .cardTatujae-img-top {
   height: 400px;
   object-fit: cover;
 }
-
 .instagram-button,
 .whatsapp-button {
   color: white;
@@ -149,22 +129,18 @@
   width: 150px;
   justify-content: center;
 }
-
 .instagram-button {
   background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
 }
-
 .whatsapp-button {
   background: linear-gradient(45deg, #25D366, #128C7E);
 }
-
 .carousel-wrapper {
   overflow: hidden;
   max-width: 100%;
   position: relative;
   cursor: pointer;
 }
-
 .carousel-track {
   display: flex;
   gap: 1rem;
@@ -177,22 +153,15 @@
   transition: transform 0.5s ease;
   animation: scrollCarouselJugadores 10s linear infinite;
 }
-
 .carousel-track.reverse {
   animation: scrollCarouselReverse 20s linear infinite;
 }
-
-
-
-/* ----------- Tamaño carrusel - Desktop ----------- */
 .carousel-img-multi {
   flex-shrink: 0;
   object-fit: cover;
   height: 440px;
-  width: 25%; /* 4 por fila */
+  width: 25%;
 }
-
-/* Animaciones */
 @keyframes scrollCarousel {
   0% { transform: translateX(0); }
   100% { transform: translateX(-260%); }
@@ -217,39 +186,29 @@
   0% { transform: translateX(0); }
   100% { transform: translateX(-790%); }
 }
-
-/* ----------- Media Queries ----------- */
 @media (max-width: 1150px) {
   .hero-image { height: 500px; }
   .banner-text { font-size: 24px; margin-bottom: 4px; }
 }
-
-/* Tablet (≤ 768px) */
 @media (max-width: 768px) {
   .hero-image { height: 420px; }
   .banner-text { font-size: 20px; margin-bottom: 4px; }
   .hero-button-container { bottom: 280px; }
-
   .carousel-img-multi {
     width: 70%;
     height: 280px;
     margin: 0 auto;
   }
-
   .carousel-track {
     animation: scrollCarouselMobile 20s linear infinite !important;
   }
-
   .carousel-track.reverse {
     animation: scrollCarouselReverseMobile 20s linear infinite !important;
   }
-
   .carousel-track-jugadores {
     animation: scrollCarouselJugadoresMobile 20s linear infinite !important;
   }
 }
-
-/* Mobile (≤ 576px) */
 @media (max-width: 576px) {
   .carousel-img-multi {
     width: 90%;
@@ -257,27 +216,22 @@
     margin: 0 auto;
   }
 }
-
-/* Mobile chico (≤ 480px) */
 @media (max-width: 480px) {
   .hero-image { height: 340px; }
   .banner-text {
     font-size: 16px;
     margin: 4px 0;
   }
-
   .carousel-img-multi {
     width: 95% !important;
     height: 450px;
     margin: 0 auto;
   }
-
   .d-flex.gap-3 {
     flex-wrap: wrap;
     justify-content: center !important;
   }
 }
-
 @media (max-width: 426px) {
   .hero-image { height: 340px; }
 }
