@@ -165,23 +165,31 @@
   cursor: pointer;
 }
 
-.carousel-track,
-.carousel-track-jugadores {
+.carousel-track {
   display: flex;
   gap: 1rem;
   transition: transform 0.5s ease;
   animation: scrollCarousel 20s linear infinite;
+}
+.carousel-track-jugadores {
+  display: flex;
+  gap: 1rem;
+  transition: transform 0.5s ease;
+  animation: scrollCarouselJugadores 10s linear infinite;
 }
 
 .carousel-track.reverse {
   animation: scrollCarouselReverse 20s linear infinite;
 }
 
+
+
+/* ----------- Tamaño carrusel - Desktop ----------- */
 .carousel-img-multi {
   flex-shrink: 0;
   object-fit: cover;
   height: 440px;
-  width: 25%;
+  width: 25%; /* 4 por fila */
 }
 
 /* Animaciones */
@@ -199,7 +207,7 @@
 }
 @keyframes scrollCarouselMobile {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-1200%); }
+  100% { transform: translateX(-1290%); }
 }
 @keyframes scrollCarouselReverseMobile {
   0% { transform: translateX(-260%); }
@@ -207,23 +215,25 @@
 }
 @keyframes scrollCarouselJugadoresMobile {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-740%); }
+  100% { transform: translateX(-790%); }
 }
 
-/* Media Queries */
+/* ----------- Media Queries ----------- */
 @media (max-width: 1150px) {
   .hero-image { height: 500px; }
   .banner-text { font-size: 24px; margin-bottom: 4px; }
 }
 
+/* Tablet (≤ 768px) */
 @media (max-width: 768px) {
   .hero-image { height: 420px; }
   .banner-text { font-size: 20px; margin-bottom: 4px; }
   .hero-button-container { bottom: 280px; }
 
   .carousel-img-multi {
-    width: 45%;
-    height: 160px;
+    width: 70%;
+    height: 280px;
+    margin: 0 auto;
   }
 
   .carousel-track {
@@ -239,12 +249,16 @@
   }
 }
 
+/* Mobile (≤ 576px) */
 @media (max-width: 576px) {
   .carousel-img-multi {
-    width: 100%;
+    width: 90%;
+    height: 300px;
+    margin: 0 auto;
   }
 }
 
+/* Mobile chico (≤ 480px) */
 @media (max-width: 480px) {
   .hero-image { height: 340px; }
   .banner-text {
@@ -253,8 +267,8 @@
   }
 
   .carousel-img-multi {
-    width: 90% !important;
-    height: 150px;
+    width: 95% !important;
+    height: 450px;
     margin: 0 auto;
   }
 
