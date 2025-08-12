@@ -33,10 +33,13 @@
 }
 .carousel-img-multi{flex-shrink:0;object-fit:cover;height:440px;width:25%}
 .carousel-track{animation:scroll var(--duration,20s) linear infinite}
-.carousel-track.reverse{animation:scroll-reverse var(--duration,20s) linear infinite}
+/* Reverse: misma animación pero reproduciendo en reversa */
+.carousel-track.reverse{
+  animation:scroll var(--duration,20s) linear infinite;
+  animation-direction:reverse;
+}
 .carousel-track-jugadores{animation:scroll var(--duration,12s) linear infinite}
 @keyframes scroll{to{transform:translate3d(calc(-1 * var(--distance,100%)),0,0)}}
-@keyframes scroll-reverse{to{transform:translate3d(var(--distance,100%),0,0)}}
 .carousel-track.is-paused{animation-play-state:paused}
 
 /* Responsive solo para imágenes */
