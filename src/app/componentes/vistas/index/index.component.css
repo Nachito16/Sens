@@ -42,6 +42,15 @@
 @keyframes scroll{to{transform:translate3d(calc(-1 * var(--distance,100%)),0,0)}}
 .carousel-track.is-paused{animation-play-state:paused}
 
+/* 🔧 Extra para iOS/GPU y asegurar running */
+.carousel-track,
+.carousel-track.reverse,
+.carousel-track-jugadores{
+  animation-fill-mode: both;
+  animation-play-state: running !important;
+  transform: translateZ(0);
+}
+
 /* Responsive solo para imágenes */
 @media(max-width:1150px){
   .hero-image{height:500px}
